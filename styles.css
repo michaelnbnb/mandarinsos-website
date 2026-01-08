@@ -37,11 +37,16 @@ header {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     padding: 2rem 0;
-    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
 }
 
 .logo-container {
-    margin-bottom: 1rem;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -50,14 +55,20 @@ header {
     width: auto;
     height: auto;
     display: block;
-    margin: 0 auto;
     object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-text {
+    flex: 1;
 }
 
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    text-align: left;
 }
 
 header h1 a {
@@ -68,6 +79,7 @@ header h1 a {
 .tagline {
     font-size: 1.1rem;
     opacity: 0.95;
+    text-align: left;
 }
 
 /* Main Content */
@@ -298,6 +310,12 @@ footer nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
     .logo {
         max-width: 80px;
         max-height: 80px;
@@ -305,6 +323,11 @@ footer nav a:hover {
 
     header h1 {
         font-size: 2rem;
+        text-align: center;
+    }
+
+    .tagline {
+        text-align: center;
     }
 
     .hero h2 {

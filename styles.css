@@ -37,39 +37,13 @@ header {
     background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
     color: white;
     padding: 2rem 0;
-}
-
-.header-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-}
-
-.logo-container {
-    flex-shrink: 0;
-}
-
-.logo {
-    max-width: 60px;
-    max-height: 60px;
-    width: auto;
-    height: auto;
-    display: block;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.header-text {
-    flex: 0 1 auto;
+    text-align: center;
 }
 
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    text-align: left;
 }
 
 header h1 a {
@@ -80,7 +54,6 @@ header h1 a {
 .tagline {
     font-size: 1.1rem;
     opacity: 0.95;
-    text-align: left;
 }
 
 /* Main Content */
@@ -91,21 +64,54 @@ main {
 /* Hero Section */
 .hero {
     padding: 4rem 0;
-    text-align: center;
     background: var(--bg-light);
+}
+
+.hero-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.hero-logo {
+    flex-shrink: 0;
+    padding-top: 0.3rem;
+}
+
+.logo {
+    max-width: 60px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.hero-text {
+    flex-shrink: 0;
+    text-align: left;
+    padding-top: 0.6rem;
+    max-width: 700px;
 }
 
 .hero h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    text-align: left;
 }
 
 .lead {
     font-size: 1.25rem;
     color: var(--text-light);
     max-width: 700px;
-    margin: 0 auto;
+    text-align: center;
+    margin: 1.5rem auto 0;
+    padding-left: calc(60px + 1rem + 0.3rem);
 }
 
 /* Features Section */
@@ -311,24 +317,32 @@ footer nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .header-content {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-top {
         flex-direction: column;
         text-align: center;
-        gap: 1rem;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .hero h2 {
+        text-align: center;
+    }
+
+    .lead {
+        padding-left: 0;
     }
 
     .logo {
         max-width: 50px;
         max-height: 50px;
-    }
-
-    header h1 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .tagline {
-        text-align: center;
     }
 
     .hero h2 {
